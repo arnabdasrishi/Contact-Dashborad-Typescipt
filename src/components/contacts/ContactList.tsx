@@ -47,7 +47,7 @@ const ContactList = () => {
   return (
     <div className="flex">
       <SideNav />
-      <div className="text-center">
+      <div className="text-center ">
         <PageHeader title={"Contact Page"} />
         <button
           className="text-3xl bg-blue-500 text-white p-2 rounded"
@@ -55,7 +55,7 @@ const ContactList = () => {
         >
           + Create Contact
         </button>
-        <div className="grid grid-cols-3 justify-center m-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-3 justify-center m-auto">
           {data &&
             data.map((items, index) => (
               <ContactCard

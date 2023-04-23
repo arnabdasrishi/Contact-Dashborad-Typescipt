@@ -39,14 +39,14 @@ const EditContactForm = () => {
   return (
     <>
       <PageHeader title={"Contact Page"}/>
-      <div className="border border-red-800 bg-gray-100 mt-20 w-1/3 m-auto p-2">
+      <div className="border border-red-800 bg-gray-100 mt-20 w-full sm:w-1/2 md:w-1/2 lg:w-1/3 xl:w-1/4 2xl:w-1/5 m-auto p-2">
         <p className="text-center text-2xl font-semibold p-5 pb-10 text-red-800">
           -:: Edit Contact Screen ::-
         </p>
         <form className="text-lg text-center" onSubmit={handleSubmit}>
           <label>First Name : </label>
           <input
-            className="mb-2 border w-3/4 p-1"
+            className="mb-2 border w-full sm:w-4/5 md:w-3/4 p-1"
             onChange={(e) => setFirstName(e.target.value)}
             value={firstname}
             type="text"
@@ -55,7 +55,7 @@ const EditContactForm = () => {
           <br />
           <label>Last Name Name : </label>
           <input
-            className="mb-2 border w-2/3 p-1"
+            className="mb-2 border w-full sm:w-3/4 p-1"
             onChange={(e) => setLastName(e.target.value)}
             value={lastname}
             type="text"
@@ -64,7 +64,7 @@ const EditContactForm = () => {
           <br />
           <label>Image URL (optional) : </label>
           <input
-            className="mb-2 border w-3/5 p-1"
+            className="mb-2 border w-full sm:w-4/5 md:w-3/5 p-1"
             onChange={(e) => setImage(e.target.value)}
             value={image_url}
             type="text"
@@ -103,4 +103,4 @@ const EditContactForm = () => {
   );
 };
 
-export default EditContactForm;
+export default EditContactForm

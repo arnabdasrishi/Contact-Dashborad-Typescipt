@@ -1,46 +1,125 @@
-# Getting Started with Create React App
+## Languages and Dependencies
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![1](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
+![2](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![3](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![4](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
+![5](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![6](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
+![6](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
 
-## Available Scripts
 
-In the project directory, you can run:
+# Contact Dashborad and Covid Tracker Chart Prototype
+[(CLICK HERE) DEPLOYED -> Netlify URL ](https://clever-crostata-63ce47.netlify.app/)
 
-### `npm start`
+This is a prototype of a Contact Dashboard with CRUD operations (Creat, read, delete, update) of all contacts possible along with implementation of chart.js for showing covid datas. All of the applications is made with React, Typescript.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Running the Appliction
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+This app was made with the help of React/npm CRA (create React application)
+- download the zip and extract the file or fork it for the git repo.
+- After clonning run the following commands on your zsh or node
+    - To install all the dependencies run : ` npm install` or `npm i`
+    - Post that run `npm start` or `npm run start`
+    - or directly you can visit the deployed netlify site `https://clever-crostata-63ce47.netlify.app/`
 
-### `npm test`
+## Tech Stack
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**Frontend:** HTML, CSS, React.js, APIs, JSON, Redux, Redux-Toolkit, ReactQuery/Tenstack, Chart.js, Typescipt, Tailwind
 
-### `npm run build`
+**Server:** API endpoint is already hoisted. You can check the fetch function inside the code to get the api/apis links which are provided below.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Contacts Redux are maintained in local storage. If you want to change just place your post link of server instead of local storage. 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Author
 
-### `npm run eject`
+- [Arnab Das](https://github.com/arnabdasrishi)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## API Reference
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+#### World wide data of cases:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+To use the system just remove the comments. 
 
-## Learn More
+```http
+  GET URL- https://disease.sh/v3/covid-19/all
+```
+Country Specific data of cases:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```http
+  GET URL- https://disease.sh/v3/covid-19/countries
+```
+Graph data for cases with date:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```http
+  GET URL- https://disease.sh/v3/covid-19/historical/all?lastdays=all
+```
+
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `token` | `string` | **Not Required** |
+
+#### Get item Format
+
+```http
+  //Sample Data format.
+  //You can aspect this format of data when you pass a get request from the server
+  
+   {
+      "updated": 1682268413968,
+      "country": "Afghanistan",
+      "countryInfo": {
+      "_id": 4,
+      "iso2": "AF",
+      "iso3": "AFG",
+      "lat": 33,
+      "long": 65,
+      "flag": "https://disease.sh/assets/img/flags/af.png"
+      },
+      "cases": 214070,
+      "todayCases": 11,
+      "deaths": 7896,
+      "todayDeaths": 0,
+      "recovered": 193174,
+      "todayRecovered": 30,
+      "active": 13000,
+      "critical": 45,
+      "casesPerOneMillion": 5253,
+      "deathsPerOneMillion": 194,
+      "tests": 1230035,
+      "testsPerOneMillion": 30182,
+      "population": 40754388,
+      "continent": "Asia",
+      "oneCasePerPeople": 190,
+      "oneDeathPerPeople": 5161,
+      "oneTestPerPeople": 33,
+      "activePerOneMillion": 318.98,
+      "recoveredPerOneMillion": 4739.96,
+      "criticalPerOneMillion": 1.1
+    },
+```
+
+## CSS and UI
+
+Tailwind CSS is used to make this project.
+
+Responsiveness work is in progress. For now at the alpha release stage it is not responsive.
+
+### Screenshots
+
+![1](https://i.ibb.co/47X7fMf/1.png)
+![1](https://i.ibb.co/8rTD87s/addnew.png)
+![1](https://i.ibb.co/W36qvGP/chart1.png)
+![1](https://i.ibb.co/8mz5Sv6/chart2.png)
+
+# Feedback
+
+If you have any feedback, please reach out to arnabdasrishi@gmail.com
+
+### 🙂 Thank You and have a nice day 🙏
+
+
+

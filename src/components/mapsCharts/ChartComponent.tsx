@@ -96,15 +96,15 @@ const ChartComponent = () => {
   // console.log(query.data);
 
   return (
-    <div className="flex">
+    <div className="flex flex-col md:flex-row text-center">
       <SideNav />
-      <div className="w-11/12">
+      <div className="w-full md:w-11/12">
         <PageHeader title={"Charts and Maps"} />
         <div className="text-center border border-2 m-auto">
           <p className="text-xl font-bold text-blue-500 mb-5">
             Covid Cases Fluctuations
           </p>
-
+  
           <p className="font-bold text-red-400">😷 Total Covid Cases</p>
           <Line className="mt-10" data={cases}></Line>
           <p className="font-bold text-violet-500 mt-10">
