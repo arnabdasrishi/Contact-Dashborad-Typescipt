@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import ContactCard from "./ContactCard";
 import { useSelector } from "react-redux";
-import { RootState } from "../store/store";
-import { Contact } from "../store/contactSlice";
+import { RootState } from "../../store/store";
+import { Contact } from "../../store/contactSlice";
 
 import { useNavigate } from "react-router-dom";
 import PageHeader from "./PageHeader";

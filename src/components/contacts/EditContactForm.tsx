@@ -1,10 +1,15 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { addContact } from "../store/contactSlice";
+import { updateContact } from "../../store/contactSlice";
+
+import { useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import PageHeader from "./PageHeader";
 
-const AddContactForm = () => {
+const EditContactForm = () => {
   const dispatch = useDispatch();
+  const { id } = useParams();
+  const navigate = useNavigate();
 
   const [firstname, setFirstName] = useState("");
   const [lastname, setLastName] = useState("");
@@ -15,26 +20,28 @@ const AddContactForm = () => {
     e.preventDefault();
 
     const newContact = {
-      id: String(Math.floor(Math.random() * 1000000)),
+      id: String(id),
       firstname,
       lastname,
       image_url,
       status,
     };
 
-    dispatch(addContact(newContact));
+    dispatch(updateContact(newContact));
 
     setFirstName("");
     setLastName("");
     setImage("");
+
+    navigate("/");
   };
 
   return (
     <>
       <PageHeader />
-      <div className="border border-red-800 bg-yellow-50 mt-20 w-1/3 m-auto p-2">
+      <div className="border border-red-800 bg-gray-100 mt-20 w-1/3 m-auto p-2">
         <p className="text-center text-2xl font-semibold p-5 pb-10 text-red-800">
-          -:: Create Contact Screen ::-
+          -:: Edit Contact Screen ::-
         </p>
         <form className="text-lg text-center" onSubmit={handleSubmit}>
           <label>First Name : </label>
@@ -87,8 +94,8 @@ const AddContactForm = () => {
             </div>
             <br />
           </div>
-          <button className="bg-green-400 text-white p-2 rounded mt-5 mb-5">
-            Save Contact
+          <button className="bg-pink-400 text-white p-2 rounded mt-5 mb-5">
+            Save Editted Contact
           </button>
         </form>
       </div>
@@ -96,4 +103,4 @@ const AddContactForm = () => {
   );
 };
 
-export default AddContactForm;
+export default EditContactForm;

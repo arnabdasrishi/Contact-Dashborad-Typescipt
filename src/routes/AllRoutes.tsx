@@ -1,7 +1,8 @@
 import { Routes, Route } from "react-router-dom";
-import ContactList from "../components/ContactList";
-import AddContactForm from "../components/AddContactForm";
-import EditContactForm from "../components/EditContactForm";
+import ContactList from "../components/contacts/ContactList";
+import AddContactForm from "../components/contacts/AddContactForm";
+import EditContactForm from "../components/contacts/EditContactForm";
+import ChartComponent from "../components/mapsCharts/ChartComponent";
 
 const AllRoutes = () => {
   return (
@@ -9,6 +10,8 @@ const AllRoutes = () => {
       <Route path="/" element={<ContactList />} />
       <Route path="/newcontact" element={<AddContactForm />} />
       <Route path="/editcontact/:id" element={<EditContactForm />} />
+
+      <Route path="/dashboard" element={<ChartComponent />} />
     </Routes>
   );
 };
