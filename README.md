@@ -57,6 +57,7 @@ Graph data for cases with date:
   GET URL- https://disease.sh/v3/covid-19/historical/all?lastdays=all
 ```
 
+## 🔒 AUTHENTECIATION 
 
 | Parameter | Type     | Description                |
 | :-------- | :------- | :------------------------- |
