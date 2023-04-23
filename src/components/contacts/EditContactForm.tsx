@@ -38,7 +38,7 @@ const EditContactForm = () => {
 
   return (
     <>
-      <PageHeader />
+      <PageHeader title={"Contact Page"}/>
       <div className="border border-red-800 bg-gray-100 mt-20 w-1/3 m-auto p-2">
         <p className="text-center text-2xl font-semibold p-5 pb-10 text-red-800">
           -:: Edit Contact Screen ::-

@@ -12,6 +12,8 @@ import {
   PointElement,
 } from "chart.js";
 import { useEffect, useState } from "react";
+import PageHeader from "../contacts/PageHeader";
+import SideNav from "../SideNav/SideNav";
 
 ChartJS.register(
   Title,
@@ -94,15 +96,23 @@ const ChartComponent = () => {
   // console.log(query.data);
 
   return (
-    <div className="w-4/5 text-center border border-red-600 m-auto">
-      <p className="text-xl font-bold text-blue-500 mb-5">
-        Covid Cases Fluctuations
-      </p>
+    <div className="flex">
+      <SideNav />
+      <div className="w-11/12">
+        <PageHeader title={"Charts and Maps"} />
+        <div className="text-center border border-2 m-auto">
+          <p className="text-xl font-bold text-blue-500 mb-5">
+            Covid Cases Fluctuations
+          </p>
 
-      <p className="font-bold text-red-400">😷 Total Covid Cases</p>
-      <Line className="mt-10" data={cases}></Line>
-      <p className="font-bold text-violet-500 mt-10">😷 Total Deaths and Recovery</p>
-      <Line className="mt-10" data={deaths}></Line>
+          <p className="font-bold text-red-400">😷 Total Covid Cases</p>
+          <Line className="mt-10" data={cases}></Line>
+          <p className="font-bold text-violet-500 mt-10">
+            😷 Total Deaths and Recovery
+          </p>
+          <Line className="mt-10" data={deaths}></Line>
+        </div>
+      </div>
     </div>
   );
 };

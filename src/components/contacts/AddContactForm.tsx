@@ -2,9 +2,12 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addContact } from "../../store/contactSlice";
 import PageHeader from "./PageHeader";
+import { useNavigate } from "react-router-dom";
 
 const AddContactForm = () => {
   const dispatch = useDispatch();
+
+  const navigate = useNavigate()
 
   const [firstname, setFirstName] = useState("");
   const [lastname, setLastName] = useState("");
@@ -27,11 +30,13 @@ const AddContactForm = () => {
     setFirstName("");
     setLastName("");
     setImage("");
+
+    navigate("/");
   };
 
   return (
-    <>
-      <PageHeader />
+    <div className="">
+      <PageHeader title={"Contact Page"}/>
       <div className="border border-red-800 bg-yellow-50 mt-20 w-1/3 m-auto p-2">
         <p className="text-center text-2xl font-semibold p-5 pb-10 text-red-800">
           -:: Create Contact Screen ::-
@@ -92,7 +97,7 @@ const AddContactForm = () => {
           </button>
         </form>
       </div>
-    </>
+    </div>
   );
 };
 

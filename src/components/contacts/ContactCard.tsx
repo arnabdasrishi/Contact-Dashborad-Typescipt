@@ -24,7 +24,14 @@ const ContactCard: React.FC<ContactCardProps> = ({
 
   return (
     <div className="border-2 w-2/3 mt-20 p-2 m-auto">
-      <img src={image} alt="prof_img" />
+      {!image ? (
+        <img
+          src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png"
+          alt="prof_img"
+        />
+      ) : (
+        <img src={image} alt="prof_img" />
+      )}
       <p className="text-2xl font-semibold m-2">
         Name: {firstname} {lastname}
       </p>
